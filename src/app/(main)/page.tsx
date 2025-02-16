@@ -1,9 +1,11 @@
-import { Button } from "@/src/components/ui/button";
+import { HeroSection } from "@/src/components/hero-section";
 
 export default function Home() {
   return (
     <main>
-      <Button>Hi</Button>
+      <div>
+        <HeroSection />
+      </div>
     </main>
   );
 }
