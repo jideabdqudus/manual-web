@@ -1,9 +1,19 @@
-import { Button } from "@/src/components/ui/button";
+import { Footer } from "@/src/components/footer";
+import { HeroSection } from "@/src/components/hero-section";
+import { ServicesSection } from "@/src/components/services-section";
 
-export default function Home() {
+export function Home() {
   return (
-    <main>
-      <Button>Hi</Button>
-    </main>
+    <div>
+      <div>
+        <HeroSection />
+      </div>
+      <div>
+        <ServicesSection />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </div>
   );
 }

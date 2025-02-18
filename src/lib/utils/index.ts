@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
 import { twitterUsername, defaultImage } from "@/config";
 
 export function cn(...inputs: ClassValue[]) {
@@ -20,6 +20,7 @@ export function generateMetadata({
   twitterUsername?: string;
 }): Metadata {
   return {
+    metadataBase: new URL("http://manual.co"),
     title,
     description,
     keywords,
@@ -36,4 +37,8 @@ export function generateMetadata({
       },
     }),
   };
+}
+
+export function getCurrentYear() {
+  return new Date().getFullYear();
 }

@@ -8,9 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1600px",
+        "4xl": "2000px",
+      },
       colors: {
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          hex: "#6D8A83",
+        },
+        "primary-light": {
+          DEFAULT: "hsl(var(--primary-light))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
