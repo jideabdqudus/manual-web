@@ -1,38 +1,34 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/src/components/ui/button";
-import { Text } from "@/src/components/ui/typography";
-
+"use client";
+import { useContext } from "react";
+import { Navbar } from "@/src/components/navbar";
+import { Text, Button } from "@/src/components/ui";
+import { QuizSection } from "@/src/components/quiz-section";
+import { QuizContext } from "@/src/common/context/QuizContext";
+import { QuizContextProps } from "@/src/common/types/context.types";
 export const HeroSection = () => {
+  const { handleQuizOpen, handleQuizClose, isQuizOpen } = useContext(
+    QuizContext
+  ) as QuizContextProps;
   return (
-    <section>
-      <div className="min-h-[600px] md:min-h-[750px] bg-primary lg:bg-[url('/assets/images/hero-bg.webp')] bg-cover flex justify-center items-center md:block md:items-start md:justify-start">
-        <div className="px-4 lg:px-8">
-          <div className="w-[90%] md:w-[80%] mx-auto pt-8">
-            <div>
-              <Link href="https://www.manual.co/" target="_blank">
-                <Image
-                  src="/assets/images/logo.svg"
-                  width={40}
-                  height={40}
-                  alt="Manual Logo"
-                />
-              </Link>
-            </div>
-            <div className="mt-4 md:mt-32 md:w-[60%] lg:w-[43%]">
-              <Text size="lg" weight="normal" className="text-6xl lg:text-8xl">
-                Be good to yourself
-              </Text>
-              <br />
-              <Text size="lg" weight="light">
-                We’re working around the clock to bring you a holistic approach
-                to your wellness. From top to bottom, inside and out.
-              </Text>
-              <Button className="my-8">TAKE THE QUIZ</Button>
-            </div>
-          </div>
+    <section className="bg-primary min-h-[500px] lg:min-h-[750px] lg:bg-[url('/assets/images/hero-bg.webp')] bg-cover bg-center">
+      <div className="container-padding">
+        <div>
+          <Navbar />
+        </div>
+        <div className="mt-16 lg:mt-32 max-w-[468px]">
+          <Text size="lg" weight="normal" className="text-6xl lg:text-8xl">
+            Be good to yourself
+          </Text>
+          <Text size="lg" weight="light" className="mt-[20px]">
+            We’re working around the clock to bring you a holistic approach to
+            your wellness. From top to bottom, inside and out.
+          </Text>
+          <Button className="my-8" onClick={handleQuizOpen}>
+            TAKE THE QUIZ
+          </Button>
         </div>
       </div>
+      {isQuizOpen && <QuizSection onClose={handleQuizClose} />}
     </section>
   );
 };
