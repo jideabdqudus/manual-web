@@ -1,8 +1,8 @@
-import { FooterMenu, Socials } from "@/src/common/types/data.types";
+import { Menu, Socials } from "@/src/common/types/data.types";
 import { FacebookIcon, GoogleIcon, TwitterIcon } from "@/src/components/icons";
 
 export const fetchMenu = async () => {
-  const menu: FooterMenu[] = [
+  const menu: Menu[] = [
     {
       id: "1",
       title: "Product",
