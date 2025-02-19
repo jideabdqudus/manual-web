@@ -8,13 +8,14 @@ export const OptionSelect = ({
   onChange: () => void;
 }) => (
   <label
-    className={`flex bg-white border border-gray-300 rounded-[8px] p-[20px] min-w-[400px] cursor-pointer transition-colors duration-200 ease-in-out hover:bg-gray-100 ${
+    className={`option-select hover:bg-gray-100 ${
       isSelected ? "!bg-primary-hex/20  !border-primary-hex !animate-pulse" : ""
     }`}
   >
     <input
       type="radio"
       name={`question-${option.value}`}
+      aria-labelledby={`question-${option.value}`}
       value={`${option.value}`}
       checked={isSelected}
       onClick={onChange}

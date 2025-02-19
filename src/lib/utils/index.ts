@@ -42,3 +42,11 @@ export function generateMetadata({
 export function getCurrentYear() {
   return new Date().getFullYear();
 }
+
+export const debounce = (func: Function, delay: number) => {
+  let timer: NodeJS.Timeout;
+  return (...args: any[]) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), delay);
+  };
+};

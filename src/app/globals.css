@@ -20,4 +20,7 @@ body {
   .container-padding {
     @apply mx-6 md:mx-16 lg:mx-32;
   }
+  .option-select {
+  @apply flex bg-white border border-gray-300 rounded-[8px] p-[20px] min-w-[400px] cursor-pointer transition-colors duration-200 ease-in-out;
+}
 }
