@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/src/lib/utils";
 
 interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   weight?: "light" | "normal" | "bold";
   as?: React.ElementType;
 }
@@ -15,6 +15,7 @@ export const Text: React.FC<TextProps> = ({
   ...props
 }) => {
   const sizeClasses = {
+    xs: "text-xs",
     sm: "text-sm",
     md: "text-md",
     lg: "text-lg",
