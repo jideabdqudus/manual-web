@@ -26,7 +26,7 @@ export const QuizSection = ({ onClose }: IQuizSection) => {
   } = useContext(QuizContext) as QuizContextProps;
 
   return (
-    <div className="fixed inset-0 bg-[#F8F7F6] flex flex-col text-black z-50 overflow-hidden ">
+    <div className="fixed inset-0 bg-[#F8F7F6] flex flex-col text-black z-50 overflow-y-auto md:overflow-hidden">
       <QuizHeader onClose={onClose} />
       {success === true ? (
         <QuizPassed onClose={onClose} handleStartOver={handleStartOver} />
