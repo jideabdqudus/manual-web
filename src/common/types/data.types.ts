@@ -22,3 +22,18 @@ export interface Service {
   details: string;
   image: string;
 }
+
+export interface Option {
+  display: string;
+  value: boolean | string;
+  isRejection: boolean;
+}
+export interface QuizQuestions {
+  question: string;
+  type: "ChoiceType";
+  options: Option[];
+}
+
+export interface Quiz {
+  questions: QuizQuestions[];
+}
