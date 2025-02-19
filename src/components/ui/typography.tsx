@@ -5,6 +5,7 @@ interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   size?: "xs" | "sm" | "md" | "lg";
   weight?: "light" | "normal" | "bold";
   as?: React.ElementType;
+  fontSize?: string;
 }
 
 export const Text: React.FC<TextProps> = ({
@@ -12,6 +13,7 @@ export const Text: React.FC<TextProps> = ({
   weight = "normal",
   as: Component = "p",
   className,
+  fontSize,
   ...props
 }) => {
   const sizeClasses = {
@@ -32,6 +34,7 @@ export const Text: React.FC<TextProps> = ({
       className={cn(
         `${sizeClasses[size]} ${weightClasses[weight]} text-alternate ${className}`
       )}
+      style={{ fontSize }}
       {...props}
     />
   );
