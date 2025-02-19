@@ -22,7 +22,6 @@ export const QuizContextProvider = ({
     ? ((currentQuestionIndex + 1) / totalQuestions) * 100
     : 0;
 
-  // Fetch quiz data when the component mounts
   useEffect(() => {
     const loadQuiz = async () => {
       const fetchedQuiz = await fetchQuiz();
@@ -64,13 +63,15 @@ export const QuizContextProvider = ({
       })
     );
 
-    if (isRejection) {
-      setSuccess(false);
-    } else if (currentQuestionIndex < (quiz?.questions.length || 0) - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-    } else {
-      setSuccess(true);
-    }
+    setTimeout(() => {
+      if (isRejection) {
+        setSuccess(false);
+      } else if (currentQuestionIndex < (quiz?.questions.length || 0) - 1) {
+        setCurrentQuestionIndex((prev) => prev + 1);
+      } else {
+        setSuccess(true);
+      }
+    }, 800);
   };
 
   const handleBack = () => {

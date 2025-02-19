@@ -18,7 +18,13 @@ export const QuizFailed = ({ onClose, handleStartOver }: IQuizFailed) => {
         specialist if you would still like this medication.
       </Text>
       <div>
-        <Button onClick={onClose} variant="ghost">
+        <Button
+          onClick={() => {
+            handleStartOver();
+            onClose();
+          }}
+          variant="ghost"
+        >
           Close
         </Button>
         <Button onClick={handleStartOver} variant="ghost">

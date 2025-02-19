@@ -9,7 +9,7 @@ export const OptionSelect = ({
 }) => (
   <label
     className={`flex bg-white border border-gray-300 rounded-[8px] p-[20px] min-w-[400px] cursor-pointer transition-colors duration-200 ease-in-out hover:bg-gray-100 ${
-      isSelected ? "!bg-primary-hex/20  !border-primary-hex" : ""
+      isSelected ? "!bg-primary-hex/20  !border-primary-hex !animate-pulse" : ""
     }`}
   >
     <input
@@ -17,7 +17,7 @@ export const OptionSelect = ({
       name={`question-${option.value}`}
       value={`${option.value}`}
       checked={isSelected}
-      onChange={onChange}
+      onClick={onChange}
       className="hidden"
     />
     <span

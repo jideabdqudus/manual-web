@@ -24,7 +24,13 @@ export const QuizPassed = ({ onClose, handleStartOver }: IQuizPassed) => {
         , and prepare to say hello to your new hair!
       </Text>
       <div>
-        <Button onClick={onClose} variant="ghost">
+        <Button
+          onClick={() => {
+            handleStartOver();
+            onClose();
+          }}
+          variant="ghost"
+        >
           Close
         </Button>
         <Button onClick={handleStartOver} variant="ghost">

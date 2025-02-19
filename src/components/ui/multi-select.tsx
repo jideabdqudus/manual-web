@@ -13,7 +13,7 @@ export const MultiSelect = ({
   <button
     onClick={onChange}
     className={`bg-white border border-gray-300 p-4 hover:bg-gray-100 cursor-pointer rounded-[16px] w-[155px] min-h-[170px] ${
-      isSelected ? "!bg-primary-hex/20 !border-primary-hex" : ""
+      isSelected ? "!bg-primary-hex/20 !border-primary-hex !animate-pulse" : ""
     }`}
   >
     <span dangerouslySetInnerHTML={{ __html: option.display }} />
