@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "jest __tests__",
+    "test:e2e": "npx playwright test",
     "dev": "next dev --port 3005",
     "build": "next build",
     "start": "next start",
