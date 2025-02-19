@@ -2,15 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: var(--font-ttnorms);
+}
+
 @layer base {
   :root {
     --primary: 105, 14.3%, 67.1%;
     --secondary: 0, 89.5%, 26.1%;
     --alternate: 181, 69%, 13.9%;
+    --primary-light: 129, 17.9%, 92.4%;
     --font-ttnorms: "TTNorms", sans-serif;
   }
 }
 
-body {
-  font-family: var(--font-ttnorms);
+@layer components {
+  .container-padding {
+    @apply mx-6 md:mx-16 lg:mx-32;
+  }
 }
